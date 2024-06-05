@@ -1,0 +1,19 @@
+@if (book) {
+  <div class="card mb-4">
+    <div class="card-body bg-light">
+      <img class="img-thumbnail float-end" alt=""
+           src="https://api.angular.schule/avatar/{{ book.rating }}">
+      <div class="card-title">
+        <h2>
+          {{ book.title }}
+          <span class="badge bg-secondary">{{ book.rating }}</span>
+        </h2>
+      </div>
+      <p>{{ book.description }}</p>
+      <p class="bg-primary " >Preis: {{ book.price }}</p>
+
+      <button type="button" class="btn btn-red"> - </button>
+      <button type="button" class="btn btn-green"> + </button>
+    </div>
+  </div>
+}
