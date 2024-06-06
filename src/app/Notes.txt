@@ -1,0 +1,46 @@
+  testing
+
+#  Tag 2 Notzien
+- Notizen : Day 2
+    Karma, Jasmine, jest
+    describe, it, expect(Assertion)
+
+  Regel für Tests, kein und , oder im should verwenden somit könnte man
+  verhindern dass man mehrere Testfälle in einem test testet
+
+
+  - Immutability:
+  Für Object und Arrays gilt: IMMER kopien erzeugen uind Neemals werte direkt ändern
+    --> um keine Seiteneffekte zu erzeugen
+    --> bessere Performance, ChangeDetection muss nicht alles nochmal prüfen
+    --> Grundvoraussetzung für Redux
+    --> spreadOperator zum kopieren , deepCopy mit structuredClonse(OBJ) // nur ganz selten
+        * Shadow Copy, Shallow Copy
+
+        * Inject statt new Service .... dann haben wir nur eine Instance
+        und initialisieren nicht viele Instancen durch das nutzen in mehreren Komponenten
+
+  Pipes müssen importiert werden, verändern die EIngabe, können verkettet werden | Uppercase, lowercase, number, number:'1.2-2' etc.
+    CurrencyPipe , DatePipe , JsonPipe, SlicePipe, KeyValuePipe, AsyncPipe
+
+#  Tag 3 Notizen
+- Notizen : Day 3
+
+#  Tag 4 Notizen
+- Notizen : Day 4
+
+  #  Tag 5 Notizen
+- Notizen : Day 5
+
+  #  Tag 6 Notizen
+- Notizen : Day 6
+
+
+
+
+
+
+
+
+
+

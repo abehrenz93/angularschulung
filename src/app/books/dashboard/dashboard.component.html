@@ -1,3 +1,5 @@
 @for ( book of books; track book.isbn ){
-  <app-book [book]="book"></app-book >
+  <app-book [book]="book" (rateDown)="doRateDown($event)" (rateUp)="doRateUp($event)"></app-book >
 }
+
+Bücher: {{books.length}}

@@ -6,14 +6,17 @@
       <div class="card-title">
         <h2>
           {{ book.title }}
-          <span class="badge bg-secondary">{{ book.rating }}</span>
+          <app-rating [ratingValue]="book.rating" ></app-rating>
         </h2>
       </div>
       <p>{{ book.description }}</p>
-      <p class="bg-primary " >Preis: {{ book.price }}</p>
-
-      <button type="button" class="btn btn-red"> - </button>
-      <button type="button" class="btn btn-green"> + </button>
+      <p>Preis: {{ book.price | currency:'EUR' }}</p>
+      @if(book.rating !== 1){
+        <button type="button" class="btn btn-red" (click)="this.doRateDown()" [disabled]="book.rating === 1" > - </button>
+      }
+      @if(book.rating !== 5){
+        <button type="button" class="btn btn-green" (click)="this.doRateUp()" [disabled]="book.rating === 5" > + </button>
+      }
     </div>
   </div>
 }
