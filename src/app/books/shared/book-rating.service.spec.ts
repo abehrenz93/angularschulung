@@ -31,15 +31,15 @@ describe('BookRatingService', () => {
     book.rating = 3;
 
     //ACT
-    service.doRateUp(book);
+    const ratedBook = service.doRateUp(book);
     //ASSERTATION
-    expect(book.rating).toBe(4);
+    expect(ratedBook.rating).toBe(4);
   });
 
   it('should decrease rating by one', () => {
-    service.doRateDown(book);
+    const ratedBook = service.doRateDown(book);
     //ASSERTATION
-    expect(book.rating).toBe(2);
+    expect(ratedBook.rating).toBe(2);
   });
 
   it('should not rate higher than 5', () => {

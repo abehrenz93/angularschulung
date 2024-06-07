@@ -6,17 +6,37 @@
       <div class="card-title">
         <h2>
           {{ book.title }}
-          <app-rating [ratingValue]="book.rating" ></app-rating>
+          <app-rating [ratingValue]="book.rating"></app-rating>
         </h2>
       </div>
       <p>{{ book.description }}</p>
       <p>Preis: {{ book.price | currency:'EUR' }}</p>
-      @if(book.rating !== minRating){
-        <button type="button" class="btn btn-red" (click)="this.doRateDown()" [disabled]="book.rating === 1" > - </button>
-      }
-      @if(book.rating !== maxRating){
-        <button type="button" class="btn btn-green" (click)="this.doRateUp()" [disabled]="book.rating === 5" > + </button>
-      }
+
+      <div class="d-flex justify-content-between">
+        <div>
+          @if (book.rating !== minRating) {
+            <button type="button" class="btn btn-red" (click)="this.doRateDown()" [disabled]="book.rating === 1"> -
+            </button>
+          }
+          @if (book.rating !== maxRating) {
+            <button type="button" class="btn btn-green" (click)="this.doRateUp()" [disabled]="book.rating === 5"> +
+            </button>
+          }
+
+          <!-- Relative oder absolute Pfade
+               Router mit oder ohne eckige Klammern
+               wenn Ausdruck : String oder Array
+          -->
+          <a [routerLink]="['/books', book.isbn]">Details</a>
+        </div>
+        <!--      <a [routerLink]="'/books/' + book.isbn">Details</a>-->
+        <!--      <a [routerLink]="book.isbn">Details</a>-->
+        <!--      <a [routerLink]="[book.isbn]">Details</a>-->
+        <!--      <a [routerLink]="['..', 'books', book.isbn]">Details</a>-->
+        <div>
+          <button class="btn btn-red " (click)="doDeleteBook()">Delete</button>
+        </div>
+      </div>
     </div>
   </div>
 }

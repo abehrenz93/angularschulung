@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {Book} from "../shared/book";
 import {BookComponent} from "../book/book.component";
 import {BookRatingService} from "../shared/book-rating.service";
+import {BookStoreService} from "../shared/book-store.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -15,34 +16,21 @@ import {BookRatingService} from "../shared/book-rating.service";
 export class DashboardComponent {
   books: Book[] = [];
   bookRatingService = inject(BookRatingService);
+  private bs = inject(BookStoreService);
 
   constructor() {
-    this.books = [
-      {
-        isbn: '123',
-        title: 'Angular',
-        description: 'Das Große Praxisbuch',
-        price: 40.9,
-        rating: 5
+    this.bs.getAll().subscribe(
+      books => this.books = books
+    );
 
-      },
-      {
-        isbn: '43243',
-        title: 'Clean Code',
-        description: 'make your code more readable',
-        price: 22.9,
-        rating: 3
-
-      },
-      {
-        isbn: '223',
-        title: 'How to Code',
-        description: 'the complete guide how to start with code',
-        price: 10.9,
-        rating: 5
-
-      },
-    ]
+    // this.bs.getAll().subscribe({
+    //   next: books => {
+    //     this.books = books
+    //   },
+    //   error: (err: HttpErrorResponse) => {
+    //     console.log(err);
+    //   }
+    // })
   }
 
   doRateDown(book: Book) {
@@ -63,5 +51,18 @@ export class DashboardComponent {
         return b
       }
     })
+  }
+
+  deleteBook(book: Book) {
+    const confirmationDialog = confirm(`Willst du das Buch ${book.title} wirklick löschen ?`);
+
+    if (confirmationDialog) {
+      this.bs.deleteBook(book.isbn);
+      this.books = this.books.filter(b => b.isbn !== book.isbn);
+      alert("Buch wurde erfolgreich gelöscht");
+    }else{
+      alert("Buch wurde nicht gelöscht")
+    }
+
   }
 }

@@ -2,13 +2,15 @@ import {Component, Input, output} from '@angular/core';
 import {Book} from "../shared/book";
 import {RatingComponent} from "./rating/rating.component";
 import {CurrencyPipe} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-book',
   standalone: true,
   imports: [
     RatingComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    RouterLink
   ],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss'
@@ -26,6 +28,8 @@ export class BookComponent {
   // @Output() rateDown = new EventEmitter<Book>();
   rateUp = output<Book>();
   rateDown = output<Book>();
+  onDeleteBook = output<Book>();
+
 
 
   doRateDown() {
@@ -44,4 +48,7 @@ export class BookComponent {
     }
   }
 
+  doDeleteBook() {
+    this.book ? this.onDeleteBook.emit(this.book) : ''
+  }
 }

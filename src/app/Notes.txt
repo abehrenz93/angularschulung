@@ -25,6 +25,18 @@
 
 #  Tag 3 Notizen
 - Notizen : Day 3
+    Tree-Shakable Providers: providedIn: root ... statt im app.config.ts / NgModule ein Import zu machen
+    SpyOn im Test , return undefinded kann man mit CallTrough() beheben
+
+     Change Detection: Wann ändern sich Daten ?
+      - Event Binding / HTTP / WEBSOCKET / Timer/ Intervall [@Input(), AsyncPipe, manuell, Promise, async await , Signal ]
+        Zone.js, prüft das gesamte Dokument auf veränderungen
+
+        changeDetection wird nur in Komponenten ausgelöst die auch mit der Strategie OnPush
+
+        Signals
+        Observables, subscribe
+
 
 #  Tag 4 Notizen
 - Notizen : Day 4

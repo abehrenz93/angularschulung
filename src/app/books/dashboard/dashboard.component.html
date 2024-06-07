@@ -1,5 +1,5 @@
 @for ( book of books; track book.isbn ){
-  <app-book [book]="book" [maxRating]="bookRatingService.maxValue" [minRating]="bookRatingService.minValue" (rateDown)="doRateDown($event)" (rateUp)="doRateUp($event)"></app-book >
+  <app-book [book]="book" [maxRating]="bookRatingService.maxValue" [minRating]="bookRatingService.minValue" (rateDown)="doRateDown($event)" (rateUp)="doRateUp($event)" (onDeleteBook)="deleteBook($event)"></app-book >
 }
 
 Bücher: {{books.length}}
