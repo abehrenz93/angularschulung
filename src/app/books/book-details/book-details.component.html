@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-between">
+  <h2> Buch titel: {{ book?.title }}</h2>
+  <app-rating [ratingValue]="book?.rating ?? 0" ></app-rating>
+</div>
+<h6>ISBN: {{ book?.isbn }}</h6>
+<p> {{ book?.description }}</p>
+<hr>
+<a routerLink="/books" > Zum Dashboard </a>
+<hr>
+<a routerLink="/books/9783864907791"> Zum Angular Buch </a>
+
+
+<!--
+  TODO
+  - ISBN aus der Route lesen
+  - Service , Http Buch laden
+  - Buch anzeigen
+
+
+-->
