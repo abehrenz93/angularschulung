@@ -11,10 +11,10 @@
       </div>
       <p>{{ book.description }}</p>
       <p>Preis: {{ book.price | currency:'EUR' }}</p>
-      @if(book.rating !== 1){
+      @if(book.rating !== minRating){
         <button type="button" class="btn btn-red" (click)="this.doRateDown()" [disabled]="book.rating === 1" > - </button>
       }
-      @if(book.rating !== 5){
+      @if(book.rating !== maxRating){
         <button type="button" class="btn btn-green" (click)="this.doRateUp()" [disabled]="book.rating === 5" > + </button>
       }
     </div>

@@ -27,6 +27,9 @@ describe('BookRatingService', () => {
   });
 
   it('should increase rating by one', () => {
+    //ARRANGE
+    book.rating = 3;
+
     //ACT
     service.doRateUp(book);
     //ASSERTATION
