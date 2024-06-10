@@ -1,0 +1,10 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "3979776460138584434": "Book Rating123!",
+    "2170946973353646086": "Preis: {$INTERPOLATION}",
+    "5028777105388019087": "Details",
+    "7022070615528435141": "Löschen",
+    "6655733960762389347": "{$INTERPOLATION} Bücher vorhanden"
+  }
+}

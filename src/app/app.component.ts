@@ -9,7 +9,7 @@ import {RouterOutlet} from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Book Rating!';
+  title = $localize`:AppComponentTitle|Der Title von der App Componente:Book Rating!`;
 }
 
 

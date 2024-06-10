@@ -10,7 +10,7 @@
         </h2>
       </div>
       <p>{{ book.description }}</p>
-      <p>Preis: {{ book.price | currency:'EUR' }}</p>
+      <p i18n="bookPreisForBook">Preis: {{ book.price | currency:'EUR' }}</p>
 
       <div class="d-flex justify-content-between">
         <div>
@@ -27,14 +27,14 @@
                Router mit oder ohne eckige Klammern
                wenn Ausdruck : String oder Array
           -->
-          <a [routerLink]="['/books', book.isbn]">Details</a>
+          <a [routerLink]="['/books', book.isbn]" i18n="bookDetailsText">Details</a>
         </div>
         <!--      <a [routerLink]="'/books/' + book.isbn">Details</a>-->
         <!--      <a [routerLink]="book.isbn">Details</a>-->
         <!--      <a [routerLink]="[book.isbn]">Details</a>-->
         <!--      <a [routerLink]="['..', 'books', book.isbn]">Details</a>-->
         <div>
-          <button class="btn btn-red " (click)="doDeleteBook()">Delete</button>
+          <button class="btn btn-red " (click)="doDeleteBook()" i18n="bookButtonDelete">Delete</button>
         </div>
       </div>
     </div>

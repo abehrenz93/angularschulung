@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3979776460138584434" datatype="html">
+        <source>Book Rating!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Der Title von der App Componente</note>
+        <note priority="1" from="meaning">AppComponentTitle</note>
+      </trans-unit>
+      <trans-unit id="2170946973353646086" datatype="html">
+        <source>Preis: <x id="INTERPOLATION" equiv-text="{{ book.price | currency:&apos;EUR&apos; }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/book/book.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <note priority="1" from="description">bookPreisForBook</note>
+      </trans-unit>
+      <trans-unit id="5028777105388019087" datatype="html">
+        <source>Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/book/book.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+        <note priority="1" from="description">bookDetailsText</note>
+      </trans-unit>
+      <trans-unit id="7022070615528435141" datatype="html">
+        <source>Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/book/book.component.html</context>
+          <context context-type="linenumber">37,39</context>
+        </context-group>
+        <note priority="1" from="description">bookButtonDelete</note>
+      </trans-unit>
+      <trans-unit id="6655733960762389347" datatype="html">
+        <source>Bücher: <x id="INTERPOLATION" equiv-text="{{books.length}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+        <note priority="1" from="description"> hier wird die Anzahl der Bücher dargestellt</note>
+        <note priority="1" from="meaning">DashboadBookSum</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

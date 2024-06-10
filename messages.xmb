@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE messagebundle [
+<!ELEMENT messagebundle (msg)*>
+<!ATTLIST messagebundle class CDATA #IMPLIED>
+
+<!ELEMENT msg (#PCDATA|ph|source)*>
+<!ATTLIST msg id CDATA #IMPLIED>
+<!ATTLIST msg seq CDATA #IMPLIED>
+<!ATTLIST msg name CDATA #IMPLIED>
+<!ATTLIST msg desc CDATA #IMPLIED>
+<!ATTLIST msg meaning CDATA #IMPLIED>
+<!ATTLIST msg obsolete (obsolete) #IMPLIED>
+<!ATTLIST msg xml:space (default|preserve) "default">
+<!ATTLIST msg is_hidden CDATA #IMPLIED>
+
+<!ELEMENT source (#PCDATA)>
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<messagebundle handler="angular">
+  <msg id="3979776460138584434" desc="Der Title von der App Componente" meaning="AppComponentTitle"><source>src/app/app.component.ts:11</source>Book Rating!</msg>
+  <msg id="2170946973353646086" desc="bookPreisForBook"><source>src/app/books/book/book.component.html:12,15</source>Preis: <ph name="INTERPOLATION"/></msg>
+  <msg id="5028777105388019087" desc="bookDetailsText"><source>src/app/books/book/book.component.html:29,32</source>Details</msg>
+  <msg id="7022070615528435141" desc="bookButtonDelete"><source>src/app/books/book/book.component.html:36,39</source>Delete</msg>
+  <msg id="6655733960762389347" desc=" hier wird die Anzahl der Bücher dargestellt" meaning="DashboadBookSum"><source>src/app/books/dashboard/dashboard.component.html:4,6</source>Bücher: <ph name="INTERPOLATION"/></msg>
+</messagebundle>

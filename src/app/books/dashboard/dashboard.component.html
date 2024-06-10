@@ -2,4 +2,4 @@
   <app-book [book]="book" [maxRating]="bookRatingService.maxValue" [minRating]="bookRatingService.minValue" (rateDown)="doRateDown($event)" (rateUp)="doRateUp($event)" (onDeleteBook)="deleteBook($event)"></app-book >
 }
 
-Bücher: {{books.length}}
+<p i18n="DashboadBookSum| hier wird die Anzahl der Bücher dargestellt" >Bücher: {{books.length}}</p>
