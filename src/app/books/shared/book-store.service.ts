@@ -19,6 +19,9 @@ export class BookStoreService {
   getSingle(isbn: string) {
     return this.http.get<Book>(this.apiUrl + '/books/' + isbn);
   }
+  getSingleSlow(isbn: string){
+    return this.http.get<Book>(this.apiUrl + '/books/' + isbn + '/slow')
+  }
 
   create(book: Book) {
     return this.http.post<Book>(this.apiUrl + '/books', book);

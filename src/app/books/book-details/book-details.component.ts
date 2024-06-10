@@ -28,6 +28,12 @@ export class BookDetailsComponent {
     this.route.paramMap.subscribe(
       (params) => {
         const isbn = params.get('isbn')!;
+        const slowisbn = '9783864907845'
+
+
+        this.bs.getSingleSlow(slowisbn).subscribe(
+          (book) => this.book = book
+        )
 
         this.bs.getSingle(isbn).subscribe(
           (book)=> this.book = book

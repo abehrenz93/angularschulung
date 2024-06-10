@@ -3,6 +3,11 @@
 
   <!-- HostElement der DashboardComponente -->
 <!--  <app-dashboard></app-dashboard> // brauchen wir nicht mehr wegen dem Routing -->
-<router-outlet></router-outlet>
+  <nav class="mb-3">
+    <a class="me-2" routerLink="books">Dashboard</a>
+    <a class="me-2" routerLink="books/create">Erstellen</a>
+    <a class="me-2" routerLink="books/search">Suchen</a>
+  </nav>
+  <router-outlet></router-outlet>
 
 </div>

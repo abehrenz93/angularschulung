@@ -40,6 +40,12 @@
 
 #  Tag 4 Notizen
 - Notizen : Day 4
+    Race Condition --> Bei 2 Requests, der erste länger benötigt den zweiten nach dem ersten anzeigt.
+     --> dafür gibt es 4 RxJs Operatoren um das Problem zu lösen
+
+    Formulare: Austausch , Reaktion , Validierung , Feedback
+    FormGroup, FormArray, FormControl, validators
+    -- Validierungsfehler abrufen mit zb. control.hasError(errorCode), control.getError(errorCode), control.errors
 
   #  Tag 5 Notizen
 - Notizen : Day 5

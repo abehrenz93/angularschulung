@@ -57,10 +57,12 @@ export class DashboardComponent {
     const confirmationDialog = confirm(`Willst du das Buch ${book.title} wirklick löschen ?`);
 
     if (confirmationDialog) {
-      this.bs.deleteBook(book.isbn);
-      this.books = this.books.filter(b => b.isbn !== book.isbn);
-      alert("Buch wurde erfolgreich gelöscht");
-    }else{
+      this.bs.deleteBook(book.isbn).subscribe( ()=> {
+
+        this.books = this.books.filter(b => b.isbn !== book.isbn);
+        alert("Buch wurde erfolgreich gelöscht");
+      })
+    } else {
       alert("Buch wurde nicht gelöscht")
     }
 
