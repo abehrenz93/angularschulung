@@ -1,3 +1,6 @@
+<div>
+  Aktuelle Uhrzeit: {{ uhrzeit() | date:'HH:mm:ss' }}
+</div>
 @for ( book of books; track book.isbn ){
   <app-book [book]="book" [maxRating]="bookRatingService.maxValue" [minRating]="bookRatingService.minValue" (rateDown)="doRateDown($event)" (rateUp)="doRateUp($event)" (onDeleteBook)="deleteBook($event)"></app-book >
 }

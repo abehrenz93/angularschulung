@@ -1,14 +1,16 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {Book} from "../shared/book";
 import {BookComponent} from "../book/book.component";
 import {BookRatingService} from "../shared/book-rating.service";
 import {BookStoreService} from "../shared/book-store.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    BookComponent
+    BookComponent,
+    DatePipe
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
@@ -17,11 +19,16 @@ export class DashboardComponent {
   books: Book[] = [];
   bookRatingService = inject(BookRatingService);
   private bs = inject(BookStoreService);
+  uhrzeit = signal(Date.now());
+  private uhrzeitInterval = 0;
+
 
   constructor() {
     this.bs.getAll().subscribe(
       books => this.books = books
     );
+    this.uhrzeitInterval = setInterval(()=>{console.log("interval läuft") ; this.uhrzeit.set(Date.now()) ;}, 1000);
+
 
     // this.bs.getAll().subscribe({
     //   next: books => {
@@ -31,6 +38,10 @@ export class DashboardComponent {
     //     console.log(err);
     //   }
     // })
+  }
+
+  ngOnDestroy(){
+    clearInterval(this.uhrzeitInterval);
   }
 
   doRateDown(book: Book) {
@@ -67,4 +78,5 @@ export class DashboardComponent {
     }
 
   }
+
 }
