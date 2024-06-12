@@ -49,6 +49,10 @@
 
   #  Tag 5 Notizen
 - Notizen : Day 5
+  Observebales , Datenströme
+  Cold Observable , nur wenn jemand zuhört
+  Hot Observable , liefer auch Daten wenn kein subscriber vorhanden ist
+
 
   #  Tag 6 Notizen
 - Notizen : Day 6
