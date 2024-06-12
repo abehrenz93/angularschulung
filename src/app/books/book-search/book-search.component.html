@@ -1,1 +1,16 @@
-<p>book-search works!</p>
+<div class="form-group">
+  <input type="text" name="bookSearch" id="bookSearch" class="form-control" placeholder="Suche"
+         [formControl]="searchControl">
+</div>
+<div>
+@if(searchControl.value.length >= 3){
+  @if( resultList() ; as books ){
+    @for(book of books ; track book.isbn){
+       <div>{{ book.title }}</div>
+    }
+  }
+} @else {
+  <p>Keine Ergebnisse</p>
+}
+
+</div>

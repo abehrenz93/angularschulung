@@ -1,9 +1,11 @@
-<div class="d-flex justify-content-between">
-  <h2> Buch titel: {{ book?.title }}</h2>
-  <app-rating [ratingValue]="book?.rating ?? 0" ></app-rating>
+
+<!--@if (book$ | async ; as book ) {<div class="d-flex justify-content-between">-->
+@if (bookSignal() ; as book ) {<div class="d-flex justify-content-between">
+<h2> Buch titel: {{ book?.title }}</h2>
+<app-rating [ratingValue]="book?.rating ?? 0" ></app-rating>
 </div>
 <h6>ISBN: {{ book?.isbn }}</h6>
-<p> {{ book?.description }}</p>
+<p> {{ book?.description }}</p>}
 <hr>
 <a routerLink="/books" > Zum Dashboard </a>
 <br>
